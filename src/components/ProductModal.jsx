@@ -40,6 +40,7 @@ export default function ProductModal({
 
         return () => window.removeEventListener("keydown", handleEsc);
     }, [setSelectedProduct]);
+
     if (!selectedProduct) return null;
 
     return (
