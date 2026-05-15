@@ -84,10 +84,111 @@ export default function App() {
     localStorage.removeItem("decorina_cart");
 
     return (
-      <div style={{ padding: "80px 24px", textAlign: "center" }}>
-        <h1>Thank you for your order</h1>
-        <p>Your payment was successful.</p>
-        <a href="/">Back to Home</a>
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          background:
+            "linear-gradient(to bottom, #f8f3ec, #f3ece3)",
+          padding: "24px",
+          fontFamily: "serif",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "#fffaf5",
+            padding: "60px 40px",
+            borderRadius: "32px",
+            maxWidth: "520px",
+            width: "100%",
+            textAlign: "center",
+            boxShadow: "0 10px 40px rgba(0,0,0,0.08)",
+          }}
+        >
+          <div
+            style={{
+              width: "90px",
+              height: "90px",
+              borderRadius: "50%",
+              backgroundColor: "#efe4d7",
+              margin: "0 auto 28px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "40px",
+            }}
+          >
+            ✓
+          </div>
+
+          <p
+            style={{
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              fontSize: "12px",
+              color: "#9c8877",
+              marginBottom: "12px",
+            }}
+          >
+            Decorina Rituals
+          </p>
+
+          <h1
+            style={{
+              fontSize: "48px",
+              marginBottom: "18px",
+              lineHeight: "1.1",
+              color: "#2d241f",
+            }}
+          >
+            Thank You
+          </h1>
+
+          <p
+            style={{
+              fontSize: "18px",
+              color: "#6e5b4d",
+              lineHeight: "1.8",
+              marginBottom: "34px",
+            }}
+          >
+            Your order has been placed successfully.
+            We can’t wait for you to experience your new rituals at home.
+          </p>
+
+          <div
+            style={{
+              backgroundColor: "#f5ede4",
+              padding: "18px",
+              borderRadius: "18px",
+              marginBottom: "30px",
+              color: "#6e5b4d",
+              fontSize: "15px",
+              lineHeight: "1.7",
+            }}
+          >
+            A confirmation email and shipping updates
+            will be sent once your order is processed.
+          </div>
+
+          <a
+            href="/"
+            style={{
+              display: "inline-block",
+              padding: "16px 34px",
+              borderRadius: "999px",
+              backgroundColor: "#2d241f",
+              color: "white",
+              textDecoration: "none",
+              fontSize: "15px",
+              letterSpacing: "0.5px",
+            }}
+          >
+            Continue Shopping
+          </a>
+        </div>
       </div>
     );
   }
