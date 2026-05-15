@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ProductSection from "./components/ProductSection";
@@ -8,8 +8,15 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import CartDrawer from "./components/CartDrawer";
 
 export default function App() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem("decorina_cart");
+
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
   const [isCartOpen, setIsCartOpen] = useState(false);
+  useEffect(() => {
+    localStorage.setItem("decorina_cart", JSON.stringify(cartItems));
+  }, [cartItems]);
   function increaseQuantity(productName) {
     setCartItems((prevItems) =>
       prevItems.map((item) =>

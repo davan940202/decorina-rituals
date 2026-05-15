@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function CartDrawer({
     cartItems,
     isCartOpen,
@@ -24,7 +26,11 @@ export default function CartDrawer({
                 }}
             />
 
-            <div
+            <motion.div
+                initial={{ x: 400 }}
+                animate={{ x: 0 }}
+                exit={{ x: 400 }}
+                transition={{ duration: 0.35 }}
                 style={{
                     position: "fixed",
                     top: 0,
@@ -92,9 +98,11 @@ export default function CartDrawer({
                                             marginBottom: "12px",
                                         }}
                                     >
-                                        {item.price}
+                                        {item.price} × {item.quantity} = $
+                                        {(
+                                            Number(item.price.replace("$", "")) * item.quantity
+                                        ).toFixed(2)}
                                     </p>
-
                                     <div
                                         style={{
                                             display: "flex",
@@ -175,29 +183,47 @@ export default function CartDrawer({
                                 </div>
                             </div>
                         ))}
-
                         <h3 style={{ marginTop: "24px" }}>
                             Total: ${total.toFixed(2)}
                         </h3>
 
                         <button
+                            onClick={() => setIsCartOpen(false)}
+                            style={{
+                                marginTop: "18px",
+                                width: "100%",
+                                padding: "14px",
+                                borderRadius: "999px",
+                                border: "1px solid #d8c5b2",
+                                backgroundColor: "transparent",
+                                color: "#2d241f",
+                                cursor: "pointer",
+                                fontSize: "15px",
+                            }}
+                        >
+                            Continue Shopping
+                        </button>
+
+                        <button
+                            disabled={cartItems.length === 0}
                             style={{
                                 marginTop: "24px",
                                 width: "100%",
                                 padding: "14px",
                                 borderRadius: "999px",
                                 border: "none",
-                                backgroundColor: "#2d241f",
+                                backgroundColor: cartItems.length === 0 ? "#c8b8a8" : "#2d241f",
                                 color: "white",
-                                cursor: "pointer",
+                                cursor: cartItems.length === 0 ? "not-allowed" : "pointer",
                                 fontSize: "15px",
+                                opacity: cartItems.length === 0 ? 0.7 : 1,
                             }}
                         >
                             Checkout
                         </button>
                     </>
                 )}
-            </div>
+            </motion.div>
         </>
     );
 }
