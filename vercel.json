@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/success",
+      "destination": "/"
+    },
+    {
+      "source": "/cancel",
+      "destination": "/"
+    }
+  ]
+}
