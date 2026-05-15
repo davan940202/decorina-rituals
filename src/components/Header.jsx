@@ -2,15 +2,24 @@ import { useEffect, useState } from "react";
 
 export default function Header({ cart, setIsCartOpen }) {
     const [scrolled, setScrolled] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };
 
-        window.addEventListener("scroll", handleScroll);
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
 
-        return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     return (
@@ -19,7 +28,7 @@ export default function Header({ cart, setIsCartOpen }) {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                padding: "22px 28px",
+                padding: isMobile ? "18px 20px" : "22px 28px",
                 borderBottom: "1px solid #ddd",
                 backgroundColor: scrolled
                     ? "rgba(255,250,245,0.92)"
@@ -33,27 +42,30 @@ export default function Header({ cart, setIsCartOpen }) {
         >
             <h1
                 style={{
-                    fontSize: "30px",
+                    fontSize: isMobile ? "30px" : "30px",
                     letterSpacing: "1px",
+                    lineHeight: "1.1",
                 }}
             >
                 Decorina Rituals
             </h1>
 
-            <nav
-                style={{
-                    display: "flex",
-                    gap: "20px",
-                    fontSize: "14px",
-                    letterSpacing: "0.5px",
-                }}
-            >
-                <a href="#home">Home</a>
-                <a href="#shop">Shop</a>
-                <a href="#about">About</a>
-                <a href="#why">Why Us</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            {!isMobile && (
+                <nav
+                    style={{
+                        display: "flex",
+                        gap: "20px",
+                        fontSize: "14px",
+                        letterSpacing: "0.5px",
+                    }}
+                >
+                    <a href="#home">Home</a>
+                    <a href="#shop">Shop</a>
+                    <a href="#about">About</a>
+                    <a href="#why">Why Us</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            )}
 
             <button
                 onClick={() => setIsCartOpen(true)}
@@ -64,12 +76,7 @@ export default function Header({ cart, setIsCartOpen }) {
                     background: "none",
                     cursor: "pointer",
                     transition: "0.3s",
-                }}
-                onMouseEnter={(e) => {
-                    e.target.style.color = "#8b6f55";
-                }}
-                onMouseLeave={(e) => {
-                    e.target.style.color = "#2d241f";
+                    color: "#2d241f",
                 }}
             >
                 Cart ({cart})
