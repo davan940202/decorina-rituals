@@ -2,7 +2,7 @@ import ProductCard from "./ProductCard";
 import { products } from "../data/products";
 import { motion } from "framer-motion";
 
-export default function ProductSection({ addToCart }) {
+export default function ProductSection({ addToCart, setSelectedProduct }) {
     return (
         <motion.section
             initial={{ opacity: 0, y: 40 }}
@@ -59,6 +59,7 @@ export default function ProductSection({ addToCart }) {
                         key={product.name}
                         product={product}
                         addToCart={() => addToCart(product)}
+                        setSelectedProduct={setSelectedProduct}
                     />
                 ))}
             </div>

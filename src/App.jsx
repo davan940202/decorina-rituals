@@ -6,6 +6,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import WhyChooseUs from "./components/WhyChooseUs";
 import CartDrawer from "./components/CartDrawer";
+import ProductModal from "./components/ProductModal";
 
 export default function App() {
   const [cartItems, setCartItems] = useState(() => {
@@ -14,6 +15,7 @@ export default function App() {
     return savedCart ? JSON.parse(savedCart) : [];
   });
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   useEffect(() => {
     localStorage.setItem("decorina_cart", JSON.stringify(cartItems));
   }, [cartItems]);
@@ -85,7 +87,10 @@ export default function App() {
 
       <Hero />
 
-      <ProductSection addToCart={addToCart} />
+      <ProductSection
+        addToCart={addToCart}
+        setSelectedProduct={setSelectedProduct}
+      />
 
       <WhyChooseUs />
 
@@ -100,6 +105,11 @@ export default function App() {
         increaseQuantity={increaseQuantity}
         decreaseQuantity={decreaseQuantity}
         removeFromCart={removeFromCart}
+      />
+      <ProductModal
+        selectedProduct={selectedProduct}
+        setSelectedProduct={setSelectedProduct}
+        addToCart={addToCart}
       />
     </div>
   );

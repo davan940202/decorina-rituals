@@ -1,9 +1,11 @@
 import { useState } from "react";
 
-export default function ProductCard({ product, addToCart }) {
+export default function ProductCard({ product, addToCart, setSelectedProduct }) {
     const [isHovered, setIsHovered] = useState(false);
+
     return (
         <div
+            onClick={() => setSelectedProduct(product)}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             style={{
@@ -11,9 +13,8 @@ export default function ProductCard({ product, addToCart }) {
                 borderRadius: "24px",
                 padding: "24px",
                 transition: "0.3s",
-                transform: isHovered
-                    ? "translateY(-8px)"
-                    : "translateY(0)",
+                cursor: "pointer",
+                transform: isHovered ? "translateY(-8px)" : "translateY(0)",
                 boxShadow: isHovered
                     ? "0 14px 30px rgba(0,0,0,0.14)"
                     : "0 4px 12px rgba(0,0,0,0.08)",
@@ -28,7 +29,6 @@ export default function ProductCard({ product, addToCart }) {
             >
                 <img
                     src={product.image}
-
                     alt={product.name}
                     style={{
                         width: "100%",
@@ -39,6 +39,7 @@ export default function ProductCard({ product, addToCart }) {
                     }}
                 />
             </div>
+
             <p
                 style={{
                     color: "#9c8877",
@@ -51,23 +52,14 @@ export default function ProductCard({ product, addToCart }) {
                 100g Soy Candle
             </p>
 
-            <h2
-                style={{
-                    fontSize: "28px",
-                    marginBottom: "10px",
-                }}
-            >
+            <h2 style={{ fontSize: "28px", marginBottom: "10px" }}>
                 {product.name}
             </h2>
 
-            <p
-                style={{
-                    color: "#8b6f55",
-                    marginBottom: "20px",
-                }}
-            >
+            <p style={{ color: "#8b6f55", marginBottom: "20px" }}>
                 {product.scent}
             </p>
+
             <p
                 style={{
                     color: "#6e5b4d",
@@ -88,11 +80,13 @@ export default function ProductCard({ product, addToCart }) {
                 <strong>{product.price}</strong>
 
                 <button
-                    onClick={() => addToCart()}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        addToCart();
+                    }}
                     onMouseEnter={(e) => {
                         e.target.style.backgroundColor = "#4a3b31";
                     }}
-
                     onMouseLeave={(e) => {
                         e.target.style.backgroundColor = "#2d241f";
                     }}
