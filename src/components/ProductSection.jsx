@@ -2,7 +2,7 @@ import ProductCard from "./ProductCard";
 import { products } from "../data/products";
 import { motion } from "framer-motion";
 
-export default function ProductSection({ setCart, cart }) {
+export default function ProductSection({ addToCart }) {
     return (
         <motion.section
             initial={{ opacity: 0, y: 40 }}
@@ -26,20 +26,22 @@ export default function ProductSection({ setCart, cart }) {
             >
                 Best Sellers
             </p>
+
             <h2
                 style={{
                     fontSize: "44px",
-                    marginBottom: "40px",
+                    marginBottom: "20px",
                     textAlign: "center",
                 }}
             >
                 Signature Scents
             </h2>
+
             <div
                 style={{
                     width: "160px",
                     height: "1px",
-                    backgroundColor: "#c9b39a",
+                    backgroundColor: "#bfa58a",
                     margin: "0 auto 32px",
                 }}
             />
@@ -56,7 +58,7 @@ export default function ProductSection({ setCart, cart }) {
                     <ProductCard
                         key={product.name}
                         product={product}
-                        addToCart={() => setCart(cart + 1)}
+                        addToCart={() => addToCart(product)}
                     />
                 ))}
             </div>

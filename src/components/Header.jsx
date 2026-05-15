@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Header({ cart }) {
+export default function Header({ cart, setIsCartOpen }) {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -55,14 +55,25 @@ export default function Header({ cart }) {
                 <a href="#contact">Contact</a>
             </nav>
 
-            <div
+            <button
+                onClick={() => setIsCartOpen(true)}
                 style={{
                     fontSize: "15px",
                     letterSpacing: "0.5px",
+                    border: "none",
+                    background: "none",
+                    cursor: "pointer",
+                    transition: "0.3s",
+                }}
+                onMouseEnter={(e) => {
+                    e.target.style.color = "#8b6f55";
+                }}
+                onMouseLeave={(e) => {
+                    e.target.style.color = "#2d241f";
                 }}
             >
                 Cart ({cart})
-            </div>
+            </button>
         </header>
     );
 }
