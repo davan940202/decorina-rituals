@@ -206,15 +206,43 @@ export default function CartDrawer({
 
                         <button
                             disabled={cartItems.length === 0}
+                            onClick={async () => {
+                                try {
+                                    const response = await fetch(
+                                        "/api/create-checkout-session",
+                                        {
+                                            method: "POST",
+                                            headers: {
+                                                "Content-Type": "application/json",
+                                            },
+                                            body: JSON.stringify({ cartItems }),
+                                        }
+                                    );
+
+                                    const data = await response.json();
+
+                                    if (data.url) {
+                                        window.location.href = data.url;
+                                    }
+                                    else {
+                                        alert("Checkout could not start. Please try again.");
+                                    }
+                                } catch (error) {
+                                    console.error("Checkout error:", error);
+                                    alert("Checkout error. Check your terminal or browser console.");
+                                }
+                            }}
                             style={{
                                 marginTop: "24px",
                                 width: "100%",
                                 padding: "14px",
                                 borderRadius: "999px",
                                 border: "none",
-                                backgroundColor: cartItems.length === 0 ? "#c8b8a8" : "#2d241f",
+                                backgroundColor:
+                                    cartItems.length === 0 ? "#c8b8a8" : "#2d241f",
                                 color: "white",
-                                cursor: cartItems.length === 0 ? "not-allowed" : "pointer",
+                                cursor:
+                                    cartItems.length === 0 ? "not-allowed" : "pointer",
                                 fontSize: "15px",
                                 opacity: cartItems.length === 0 ? 0.7 : 1,
                             }}

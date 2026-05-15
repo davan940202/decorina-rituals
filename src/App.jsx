@@ -67,7 +67,34 @@ export default function App() {
     (total, item) => total + item.quantity,
     0
   );
+  const currentPath = window.location.pathname;
 
+  if (currentPath === "/success") {
+    return (
+      <div style={{ padding: "80px 24px", textAlign: "center" }}>
+        <h1>Thank you for your order</h1>
+        <p>Your payment was successful.</p>
+        <a
+          href="/"
+          onClick={() => {
+            localStorage.removeItem("decorina_cart");
+          }}
+        >
+          Back to Home
+        </a>
+      </div>
+    );
+  }
+
+  if (currentPath === "/cancel") {
+    return (
+      <div style={{ padding: "80px 24px", textAlign: "center" }}>
+        <h1>Order Cancelled</h1>
+        <p>Your payment was not completed.</p>
+        <a href="/">Back to Home</a>
+      </div>
+    );
+  }
   return (
 
 
