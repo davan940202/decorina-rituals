@@ -58,7 +58,7 @@ export default function ProductSection({ addToCart, setSelectedProduct }) {
                     <ProductCard
                         key={product.name}
                         product={product}
-                        addToCart={() => addToCart(product)}
+                        addToCart={addToCart}
                         setSelectedProduct={setSelectedProduct}
                     />
                 ))}

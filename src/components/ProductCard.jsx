@@ -82,7 +82,8 @@ export default function ProductCard({ product, addToCart, setSelectedProduct }) 
                 <button
                     onClick={(e) => {
                         e.stopPropagation();
-                        addToCart();
+
+                        addToCart(product);
                     }}
                     onMouseEnter={(e) => {
                         e.target.style.backgroundColor = "#4a3b31";
