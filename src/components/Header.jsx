@@ -42,7 +42,7 @@ export default function Header({ cart, setIsCartOpen }) {
         >
             <h1
                 style={{
-                    fontSize: isMobile ? "30px" : "30px",
+                    fontSize: isMobile ? "26px" : "30px",
                     letterSpacing: "1px",
                     lineHeight: "1.1",
                 }}
