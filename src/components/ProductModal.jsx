@@ -28,6 +28,18 @@ export default function ProductModal({
             document.body.style.overflow = "auto";
         };
     }, [selectedProduct]);
+
+    useEffect(() => {
+        const handleEsc = (e) => {
+            if (e.key === "Escape") {
+                setSelectedProduct(null);
+            }
+        };
+
+        window.addEventListener("keydown", handleEsc);
+
+        return () => window.removeEventListener("keydown", handleEsc);
+    }, [setSelectedProduct]);
     if (!selectedProduct) return null;
 
     return (
