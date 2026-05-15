@@ -17,6 +17,17 @@ export default function ProductModal({
 
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+    useEffect(() => {
+        if (selectedProduct) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [selectedProduct]);
     if (!selectedProduct) return null;
 
     return (
