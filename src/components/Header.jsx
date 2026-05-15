@@ -72,11 +72,13 @@ export default function Header({ cart, setIsCartOpen }) {
                 style={{
                     fontSize: "15px",
                     letterSpacing: "0.5px",
-                    border: "none",
-                    background: "none",
+                    border: "1px solid #d8c5b2",
+                    backgroundColor: "#fffaf5",
+                    color: "#2d241f",
                     cursor: "pointer",
                     transition: "0.3s",
-                    color: "#2d241f",
+                    padding: "10px 18px",
+                    borderRadius: "999px",
                 }}
             >
                 Cart ({cart})
