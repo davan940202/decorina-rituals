@@ -219,17 +219,21 @@ export default function CartDrawer({
                                         }
                                     );
 
-                                    const data = await response.json();
+                                    const text = await response.text();
+
+                                    console.log("Response:", text);
+
+                                    const data = text ? JSON.parse(text) : {};
 
                                     if (data.url) {
                                         window.location.href = data.url;
                                     }
                                     else {
-                                        alert("Checkout could not start. Please try again.");
+                                        alert(JSON.stringify(data));
                                     }
                                 } catch (error) {
                                     console.error("Checkout error:", error);
-                                    alert("Checkout error. Check your terminal or browser console.");
+                                    alert(error.message);
                                 }
                             }}
                             style={{

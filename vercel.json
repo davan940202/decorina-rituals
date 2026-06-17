@@ -1,7 +1,15 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/collection",
+      "destination": "/"
+    },
+    {
+      "source": "/success",
+      "destination": "/"
+    },
+    {
+      "source": "/cancel",
       "destination": "/"
     }
   ]
