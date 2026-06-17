@@ -24,6 +24,29 @@ export default async function handler(req, res) {
         allowed_countries: ["AU"],
       },
 
+      shipping_options: [
+        {
+          shipping_rate_data: {
+            type: "fixed_amount",
+            fixed_amount: {
+              amount: 0,
+              currency: "aud",
+            },
+            display_name: "Standard Delivery",
+            delivery_estimate: {
+              minimum: {
+                unit: "business_day",
+                value: 2,
+              },
+              maximum: {
+                unit: "business_day",
+                value: 7,
+              },
+            },
+          },
+        },
+      ],
+
       phone_number_collection: {
         enabled: true,
       },
