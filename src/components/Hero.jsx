@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import heroImage from "../assets/images/hero.png";
-import { Link } from "react-router-dom";
 
 export default function Hero() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
