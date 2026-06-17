@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import heroImage from "../assets/images/hero.png";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
@@ -67,43 +68,45 @@ export default function Hero() {
                     balance and everyday wellness through meaningful rituals.
                 </p>
 
-                <button
+                <Link
+                    to="/collection"
                     style={{
+                        display: "inline-block",
                         padding: "16px 28px",
                         borderRadius: "999px",
-                        border: "none",
                         backgroundColor: "#2d241f",
                         color: "white",
                         fontSize: "16px",
+                        textDecoration: "none",
                         cursor: "pointer",
                     }}
                 >
                     Shop Candles
-                </button>
+                </Link>
             </div>
 
             <div
-    style={{
-        height: isMobile ? "420px" : "620px",
-        borderRadius: "42px",
-        background: "linear-gradient(to bottom right, #eadfce, #d8c0a4)",
-        position: "relative",
-        overflow: "hidden",
-        boxShadow: "0 30px 80px rgba(61, 45, 34, 0.12)",
-    }}
->
-    <img
-        src={heroImage}
-        alt="Decorina Rituals Candle"
-        style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center",
-            display: "block",
-        }}
-    />
-</div>
+                style={{
+                    height: isMobile ? "420px" : "620px",
+                    borderRadius: "42px",
+                    background: "linear-gradient(to bottom right, #eadfce, #d8c0a4)",
+                    position: "relative",
+                    overflow: "hidden",
+                    boxShadow: "0 30px 80px rgba(61, 45, 34, 0.12)",
+                }}
+            >
+                <img
+                    src={heroImage}
+                    alt="Decorina Rituals Candle"
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        display: "block",
+                    }}
+                />
+            </div>
         </section>
     );
 }
