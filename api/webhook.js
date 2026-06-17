@@ -54,10 +54,19 @@ export default async function handler(req, res) {
 
         const customer = session.customer_details;
 
-        const shippingName =
-            session.shipping_details?.name || customer?.name || "N/A";
-
+        const shippingName = session.shipping_details?.name || "N/A";
         const shippingAddress = session.shipping_details?.address;
+
+        const formattedShippingAddress = shippingAddress
+            ? `
+        <strong>Name:</strong> ${shippingName}<br />
+        ${shippingAddress.line1 || ""}<br />
+        ${shippingAddress.line2 || ""}<br />
+        ${shippingAddress.city || ""}, ${shippingAddress.state || ""} ${shippingAddress.postal_code || ""
+            }<br />
+        ${shippingAddress.country || ""}
+      `
+            : "No shipping address provided.";
 
         await resend.emails.send({
             from: "Decorina Rituals <onboarding@resend.dev>",
@@ -74,15 +83,9 @@ export default async function handler(req, res) {
                 </p>
 
                 <h3>Shipping Address</h3>
-                <p>
-                    <strong>Name:</strong> ${shippingName}<br />
-                    ${shippingAddress?.line1 || ""}<br />
-                    ${shippingAddress?.line2 || ""}<br />
-                    ${shippingAddress?.city || ""}, ${shippingAddress?.state || ""} ${
-                        shippingAddress?.postal_code || ""
-                    }<br />
-                    ${shippingAddress?.country || ""}
-                </p>
+<p>
+    ${formattedShippingAddress}
+</p>
 
                 <h3>Items</h3>
                 <ul>${itemsHtml}</ul>
