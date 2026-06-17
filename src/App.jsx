@@ -22,6 +22,13 @@ export default function App() {
     localStorage.setItem("decorina_cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
+  useEffect(() => {
+    if (window.location.pathname === "/success") {
+      localStorage.removeItem("decorina_cart");
+      setCartItems([]);
+    }
+  }, []);
+
   function addToCart(product) {
     setToastMessage(`${product.name} added to cart`);
 
@@ -134,7 +141,6 @@ export default function App() {
     );
   }
   if (currentPath === "/success") {
-    localStorage.removeItem("decorina_cart");
 
     return (
       <div
