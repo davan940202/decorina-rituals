@@ -68,21 +68,22 @@ export default function Hero() {
                     balance and everyday wellness through meaningful rituals.
                 </p>
 
-                <Link
-                    to="/collection"
+                <button
+                    onClick={() => {
+                        window.location.href = "/collection";
+                    }}
                     style={{
-                        display: "inline-block",
                         padding: "16px 28px",
                         borderRadius: "999px",
+                        border: "none",
                         backgroundColor: "#2d241f",
                         color: "white",
                         fontSize: "16px",
-                        textDecoration: "none",
                         cursor: "pointer",
                     }}
                 >
                     Shop Candles
-                </Link>
+                </button>
             </div>
 
             <div
