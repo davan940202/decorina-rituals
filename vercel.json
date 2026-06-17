@@ -7,6 +7,10 @@
     {
       "source": "/cancel",
       "destination": "/"
+    },
+    {
+      "source": "/collection",
+      "destination": "/"
     }
   ]
 }
