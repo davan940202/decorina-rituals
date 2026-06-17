@@ -53,38 +53,43 @@ export default async function handler(req, res) {
             .join("");
 
         const customer = session.customer_details;
-        const address =
-            session.shipping_details?.address ||
-            session.customer_details?.address;
+
+        const shippingName =
+            session.shipping_details?.name || customer?.name || "N/A";
+
+        const shippingAddress = session.shipping_details?.address;
+
         await resend.emails.send({
             from: "Decorina Rituals <onboarding@resend.dev>",
             to: process.env.ORDER_EMAIL,
             subject: "New Decorina Rituals Order",
             html: `
-        <h2>New Decorina Rituals Order</h2>
+                <h2>New Decorina Rituals Order</h2>
 
-        <h3>Customer</h3>
-        <p>
-          <strong>Name:</strong> ${customer?.name || "N/A"}<br />
-          <strong>Email:</strong> ${customer?.email || "N/A"}<br />
-          <strong>Phone:</strong> ${customer?.phone || "N/A"}
-        </p>
+                <h3>Customer</h3>
+                <p>
+                    <strong>Name:</strong> ${customer?.name || "N/A"}<br />
+                    <strong>Email:</strong> ${customer?.email || "N/A"}<br />
+                    <strong>Phone:</strong> ${customer?.phone || "N/A"}
+                </p>
 
-        <h3>Shipping Address</h3>
-        <p>
-          ${address?.line1 || ""}<br />
-          ${address?.line2 || ""}<br />
-          ${address?.city || ""}, ${address?.state || ""} ${address?.postal_code || ""
-                }<br />
-          ${address?.country || ""}
-        </p>
+                <h3>Shipping Address</h3>
+                <p>
+                    <strong>Name:</strong> ${shippingName}<br />
+                    ${shippingAddress?.line1 || ""}<br />
+                    ${shippingAddress?.line2 || ""}<br />
+                    ${shippingAddress?.city || ""}, ${shippingAddress?.state || ""} ${
+                        shippingAddress?.postal_code || ""
+                    }<br />
+                    ${shippingAddress?.country || ""}
+                </p>
 
-        <h3>Items</h3>
-        <ul>${itemsHtml}</ul>
+                <h3>Items</h3>
+                <ul>${itemsHtml}</ul>
 
-        <h3>Total Paid</h3>
-        <p>$${(session.amount_total / 100).toFixed(2)} AUD</p>
-      `,
+                <h3>Total Paid</h3>
+                <p>$${(session.amount_total / 100).toFixed(2)} AUD</p>
+            `,
         });
     }
 
