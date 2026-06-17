@@ -41,7 +41,9 @@ export default async function handler(req, res) {
     if (event.type === "checkout.session.completed") {
         const webhookSession = event.data.object;
 
-        const session = await stripe.checkout.sessions.retrieve(webhookSession.id);
+        const session = await stripe.checkout.sessions.retrieve(webhookSession.id, {
+            expand: ["payment_intent"],
+        });
 
         const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
 
@@ -55,9 +57,16 @@ export default async function handler(req, res) {
             .join("");
 
         const customer = session.customer_details;
+        const paymentIntentShipping = session.payment_intent?.shipping;
 
-        const shippingName = session.shipping_details?.name || "N/A";
-        const shippingAddress = session.shipping_details?.address;
+        const shippingName =
+            session.shipping_details?.name ||
+            paymentIntentShipping?.name ||
+            "N/A";
+
+        const shippingAddress =
+            session.shipping_details?.address ||
+            paymentIntentShipping?.address;
 
         const formattedShippingAddress = shippingAddress
             ? `
