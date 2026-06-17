@@ -40,6 +40,8 @@ export default async function handler(req, res) {
 
     if (event.type === "checkout.session.completed") {
         const session = event.data.object;
+        console.log("FULL SESSION:");
+        console.log(JSON.stringify(session, null, 2));
 
         const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
 
