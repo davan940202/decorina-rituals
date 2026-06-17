@@ -68,7 +68,7 @@ export default function CartDrawer({
                     <>
                         {cartItems.map((item) => (
                             <div
-                                key={item.name}
+                                key={item.id}
                                 style={{
                                     borderBottom: "1px solid #eadfce",
                                     padding: "20px 0",
@@ -121,7 +121,7 @@ export default function CartDrawer({
                                         >
                                             <button
                                                 onClick={() =>
-                                                    decreaseQuantity(item.name)
+                                                    decreaseQuantity(item.id)
                                                 }
                                                 style={{
                                                     border: "none",
@@ -148,7 +148,7 @@ export default function CartDrawer({
 
                                             <button
                                                 onClick={() =>
-                                                    increaseQuantity(item.name)
+                                                    increaseQuantity(item.id)
                                                 }
                                                 style={{
                                                     border: "none",
@@ -166,7 +166,7 @@ export default function CartDrawer({
 
                                         <button
                                             onClick={() =>
-                                                removeFromCart(item.name)
+                                                removeFromCart(item.id)
                                             }
                                             style={{
                                                 marginLeft: "auto",

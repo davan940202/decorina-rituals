@@ -1,5 +1,5 @@
 import ProductCard from "./ProductCard";
-import { products } from "../data/products";
+import { featuredProducts } from "../data/products";
 import { motion } from "framer-motion";
 
 export default function ProductSection({ addToCart, setSelectedProduct }) {
@@ -49,19 +49,40 @@ export default function ProductSection({ addToCart, setSelectedProduct }) {
             <div
                 style={{
                     display: "grid",
-                    gridTemplateColumns:
-                        "repeat(auto-fit, minmax(300px, 1fr))",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
                     gap: "30px",
                 }}
             >
-                {products.map((product) => (
+                {featuredProducts.map((product) => (
                     <ProductCard
-                        key={product.name}
+                        key={product.id}
                         product={product}
                         addToCart={addToCart}
                         setSelectedProduct={setSelectedProduct}
                     />
                 ))}
+            </div>
+
+            <div
+                style={{
+                    textAlign: "center",
+                    marginTop: "48px",
+                }}
+            >
+                <a
+                    href="/collection"
+                    style={{
+                        color: "#8b6f55",
+                        textDecoration: "none",
+                        fontSize: "18px",
+                        letterSpacing: "0.5px",
+                        fontStyle: "italic",
+                        borderBottom: "1px solid #bfa58a",
+                        paddingBottom: "4px",
+                    }}
+                >
+                    Browse the Rituals
+                </a>
             </div>
         </motion.section>
     );

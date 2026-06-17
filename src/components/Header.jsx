@@ -59,11 +59,11 @@ export default function Header({ cart, setIsCartOpen }) {
                         letterSpacing: "0.5px",
                     }}
                 >
-                    <a href="#home">Home</a>
-                    <a href="#shop">Shop</a>
-                    <a href="#about">About</a>
-                    <a href="#why">Why Us</a>
-                    <a href="#contact">Contact</a>
+                    <a href="/">Home</a>
+                    <a href="/#shop">Shop</a>
+                    <a href="/#about">About</a>
+                    <a href="/#why-us">Why Us</a>
+                    <a href="/#contact">Contact</a>
                 </nav>
             )}
 

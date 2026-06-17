@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import WhyChooseUs from "./components/WhyChooseUs";
 import CartDrawer from "./components/CartDrawer";
 import ProductModal from "./components/ProductModal";
+import Collection from "./pages/Collection";
 
 export default function App() {
   const [cartItems, setCartItems] = useState(() => {
@@ -30,12 +31,12 @@ export default function App() {
 
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(
-        (item) => item.name === product.name
+        (item) => item.id === product.id
       );
 
       if (existingItem) {
         return prevItems.map((item) =>
-          item.name === product.name
+          item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -45,21 +46,21 @@ export default function App() {
     });
   }
 
-  function increaseQuantity(productName) {
+  function increaseQuantity(productId) {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
-        item.name === productName
+        item.id === productId
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
     );
   }
 
-  function decreaseQuantity(productName) {
+  function decreaseQuantity(productId) {
     setCartItems((prevItems) =>
       prevItems
         .map((item) =>
-          item.name === productName
+          item.id === productId
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )
@@ -67,9 +68,9 @@ export default function App() {
     );
   }
 
-  function removeFromCart(productName) {
+  function removeFromCart(productId) {
     setCartItems((prevItems) =>
-      prevItems.filter((item) => item.name !== productName)
+      prevItems.filter((item) => item.id !== productId)
     );
   }
 
@@ -79,7 +80,59 @@ export default function App() {
   );
 
   const currentPath = window.location.pathname;
+  if (currentPath === "/collection") {
+    return (
+      <div
+        style={{
+          background: "linear-gradient(to bottom, #f8f3ec, #f3ece3)",
+          minHeight: "100vh",
+          fontFamily: "serif",
+          color: "#2d241f",
+        }}
+      >
+        <Header cart={cartCount} setIsCartOpen={setIsCartOpen} />
 
+        <Collection
+          addToCart={addToCart}
+          setSelectedProduct={setSelectedProduct}
+        />
+
+        <CartDrawer
+          cartItems={cartItems}
+          isCartOpen={isCartOpen}
+          setIsCartOpen={setIsCartOpen}
+          increaseQuantity={increaseQuantity}
+          decreaseQuantity={decreaseQuantity}
+          removeFromCart={removeFromCart}
+        />
+
+        <ProductModal
+          selectedProduct={selectedProduct}
+          setSelectedProduct={setSelectedProduct}
+          addToCart={addToCart}
+        />
+        {toastMessage && (
+          <div
+            style={{
+              position: "fixed",
+              bottom: "28px",
+              right: "28px",
+              backgroundColor: "#2d241f",
+              color: "#fffaf5",
+              padding: "14px 22px",
+              borderRadius: "999px",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.18)",
+              zIndex: 3000,
+              fontSize: "15px",
+              letterSpacing: "0.3px",
+            }}
+          >
+            ✓ {toastMessage}
+          </div>
+        )}
+      </div>
+    );
+  }
   if (currentPath === "/success") {
     localStorage.removeItem("decorina_cart");
 

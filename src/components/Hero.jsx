@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import candle from "../assets/images/candle.jpg";
+import heroImage from "../assets/images/hero.png";
 
 export default function Hero() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
@@ -36,7 +36,7 @@ export default function Hero() {
                         marginBottom: "18px",
                     }}
                 >
-                    Melbourne Wellness Candles
+                    WELLNESS · MINDFULNESS · RITUALS
                 </p>
                 <motion.h1
                     initial={{ opacity: 0, y: 40 }}
@@ -49,9 +49,9 @@ export default function Hero() {
                         marginBottom: "24px",
                     }}
                 >
-                    A Soft Ritual
+                    Transform Everyday
                     <br />
-                    for Calm & Wellness
+                    Moments Into Rituals
                 </motion.h1>
 
                 <p
@@ -63,8 +63,8 @@ export default function Hero() {
                         marginBottom: "32px",
                     }}
                 >
-                    Hand-poured soy candles crafted for relaxation, mindfulness, and
-                    beautiful home ambience.
+                    Hand-poured soy candles crafted to support calm,
+                    balance and everyday wellness through meaningful rituals.
                 </p>
 
                 <button
@@ -83,43 +83,27 @@ export default function Hero() {
             </div>
 
             <div
-                style={{
-                    height: isMobile ? "400px" : "600px",
-                    borderRadius: "40px",
-                    background: "linear-gradient(to bottom right, #eadfce, #d6bea1)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    position: "relative",
-                    overflow: "hidden",
-                }}
-            >
-                <div
-                    style={{
-                        position: "absolute",
-                        width: "500px",
-                        height: "500px",
-                        background: "rgba(255,255,255,0.18)",
-                        borderRadius: "50%",
-                        top: "-120px",
-                        right: "-120px",
-                        filter: "blur(20px)",
-                    }}
-                />
-
-                <img
-                    src={candle}
-                    alt="Decorina Rituals Candle"
-                    style={{
-                        width: isMobile ? "260px" : "340px",
-                        height: "auto",
-                        borderRadius: "30px",
-                        boxShadow: "0 20px 40px rgba(0,0,0,0.18)",
-                        position: "relative",
-                        zIndex: 2,
-                    }}
-                />
-            </div>
+    style={{
+        height: isMobile ? "420px" : "620px",
+        borderRadius: "42px",
+        background: "linear-gradient(to bottom right, #eadfce, #d8c0a4)",
+        position: "relative",
+        overflow: "hidden",
+        boxShadow: "0 30px 80px rgba(61, 45, 34, 0.12)",
+    }}
+>
+    <img
+        src={heroImage}
+        alt="Decorina Rituals Candle"
+        style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
+            display: "block",
+        }}
+    />
+</div>
         </section>
     );
 }
