@@ -61,8 +61,8 @@ export default function Header({ cart, setIsCartOpen }) {
                 >
                     <a href="/#home">Home</a>
                     <a href="/#shop">Shop</a>
-                    <a href="/#about">About</a>
                     <a href="/#why-us">Why Us</a>
+                    <a href="/#about">About</a>
                     <a href="/#contact">Contact</a>
                 </nav>
             )}
