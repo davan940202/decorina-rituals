@@ -276,18 +276,28 @@ export default function App() {
     >
       <Header cart={cartCount} setIsCartOpen={setIsCartOpen} />
 
-      <Hero />
+      <section id="home">
+        <Hero />
+      </section>
 
-      <ProductSection
-        addToCart={addToCart}
-        setSelectedProduct={setSelectedProduct}
-      />
+      <section id="shop">
+        <ProductSection
+          addToCart={addToCart}
+          setSelectedProduct={setSelectedProduct}
+        />
+      </section>
 
-      <WhyChooseUs />
+      <section id="why-us">
+        <WhyChooseUs />
+      </section>
 
-      <About />
+      <section id="about">
+        <About />
+      </section>
 
-      <Footer />
+      <section id="contact">
+        <Footer />
+      </section>
 
       <CartDrawer
         cartItems={cartItems}
