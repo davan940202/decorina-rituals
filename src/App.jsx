@@ -8,7 +8,6 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import CartDrawer from "./components/CartDrawer";
 import ProductModal from "./components/ProductModal";
 import Collection from "./pages/Collection";
-import PreOrderNotice from "./components/PreOrderNotice";
 
 export default function App() {
   const [cartItems, setCartItems] = useState(() => {
@@ -278,10 +277,6 @@ export default function App() {
       <Header cart={cartCount} setIsCartOpen={setIsCartOpen} />
 
       <Hero />
-
-      <Hero />
-
-      <PreOrderNotice />
 
       <ProductSection
         addToCart={addToCart}
