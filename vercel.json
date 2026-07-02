@@ -1,16 +1,9 @@
 {
   "rewrites": [
-    {
-      "source": "/collection",
-      "destination": "/"
-    },
-    {
-      "source": "/success",
-      "destination": "/"
-    },
-    {
-      "source": "/cancel",
-      "destination": "/"
-    }
+    { "source": "/waitlist", "destination": "/" },
+    { "source": "/waitlist-success", "destination": "/" },
+    { "source": "/collection", "destination": "/" },
+    { "source": "/success", "destination": "/" },
+    { "source": "/cancel", "destination": "/" }
   ]
 }
