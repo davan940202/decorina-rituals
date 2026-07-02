@@ -14,7 +14,13 @@ export default function About() {
                 textAlign: "center",
             }}
         >
-            <h2 style={{ fontSize: "48px", marginBottom: "24px" }}>
+            <h2
+                style={{
+                    fontSize: "48px",
+                    marginBottom: "24px",
+                    color: "#2d241f",
+                }}
+            >
                 About Decorina Rituals
             </h2>
 
@@ -23,23 +29,54 @@ export default function About() {
                     width: "160px",
                     height: "1px",
                     backgroundColor: "#c9b39a",
-                    margin: "0 auto 32px",
+                    margin: "0 auto 48px",
                 }}
             />
 
-            <p
+            <div
                 style={{
-                    maxWidth: "800px",
+                    maxWidth: "850px",
                     margin: "0 auto",
-                    fontSize: "20px",
-                    lineHeight: "1.8",
                     color: "#6e5b4d",
+                    textAlign: "left",
+                    lineHeight: "2",
+                    fontSize: "18px",
                 }}
             >
-                Decorina Rituals is a Melbourne-based wellness candle brand created to
-                bring calm, warmth, and mindfulness into everyday spaces. Our candles
-                are designed to feel elegant, soothing, and gift-ready.
-            </p>
+                <p style={{ marginBottom: "28px" }}>
+                    <strong>Decorina Rituals</strong> is a Melbourne-based wellness and
+                    lifestyle brand created to bring calm, warmth, and intentional living
+                    into everyday spaces.
+                </p>
+
+                <p style={{ marginBottom: "28px" }}>
+                    We believe that true wellness begins with the small rituals we create
+                    for ourselves. Every candle is thoughtfully designed to transform
+                    ordinary moments into meaningful experiences—whether you're starting
+                    your morning with intention, unwinding after a long day, practising
+                    mindfulness, or simply enjoying a quiet evening at home.
+                </p>
+
+                <p style={{ marginBottom: "28px" }}>
+                    Inspired by nature and crafted with care, our candles are hand-poured
+                    using natural soy wax and thoughtfully curated fragrance blends. We
+                    value natural ingredients, timeless design, and fragrances that create
+                    not only beautiful homes, but a peaceful state of mind.
+                </p>
+
+                <p style={{ marginBottom: "28px" }}>
+                    At Decorina Rituals, our candles are more than home fragrances—they
+                    represent a lifestyle centred around balance, wellness, and slowing
+                    down. Every scent is designed to evoke a feeling, tell a story, and
+                    become part of your everyday rituals.
+                </p>
+
+                <p>
+                    Elegant, soothing, and gift-ready, each candle is created to bring a
+                    sense of quiet luxury into your home while reflecting the way we believe
+                    life should be lived: intentionally, beautifully, and mindfully.
+                </p>
+            </div>
         </motion.section>
     );
 }
