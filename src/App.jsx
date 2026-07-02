@@ -8,6 +8,8 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import CartDrawer from "./components/CartDrawer";
 import ProductModal from "./components/ProductModal";
 import Collection from "./pages/Collection";
+import Waitlist from "./pages/Waitlist";
+import WaitlistSuccess from "./pages/WaitlistSuccess";
 
 export default function App() {
   const [cartItems, setCartItems] = useState(() => {
@@ -113,6 +115,12 @@ export default function App() {
   );
 
   const currentPath = window.location.pathname;
+  if (currentPath === "/waitlist-success") {
+    return <WaitlistSuccess />;
+  }
+  if (window.location.pathname === "/waitlist") {
+    return <Waitlist />;
+  }
   if (currentPath === "/collection") {
     return (
       <div
