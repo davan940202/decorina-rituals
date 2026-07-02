@@ -95,7 +95,8 @@ export default function Collection({
                 style={{
                     display: "grid",
                     gridTemplateColumns:
-                        "repeat(auto-fit, minmax(300px, 1fr))",
+                        "repeat(auto-fill, minmax(300px, 300px))",
+                    justifyContent: "center",
                     gap: "30px",
                 }}
             >
