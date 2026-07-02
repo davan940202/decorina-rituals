@@ -23,6 +23,32 @@ export default function App() {
   }, [cartItems]);
 
   useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+
+      if (hash) {
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }, 100);
+      }
+    };
+
+    scrollToHash();
+
+    window.addEventListener("hashchange", scrollToHash);
+
+    return () => {
+      window.removeEventListener("hashchange", scrollToHash);
+    };
+  }, []);
+  useEffect(() => {
     if (window.location.pathname === "/success") {
       localStorage.removeItem("decorina_cart");
       setCartItems([]);
@@ -276,26 +302,26 @@ export default function App() {
     >
       <Header cart={cartCount} setIsCartOpen={setIsCartOpen} />
 
-      <section id="home">
+      <section id="home" style={{ scrollMarginTop: "90px" }}>
         <Hero />
       </section>
 
-      <section id="shop">
+      <section id="shop" style={{ scrollMarginTop: "90px" }}>
         <ProductSection
           addToCart={addToCart}
           setSelectedProduct={setSelectedProduct}
         />
       </section>
 
-      <section id="why-us">
+      <section id="why-us" style={{ scrollMarginTop: "90px" }}>
         <WhyChooseUs />
       </section>
 
-      <section id="about">
+      <section id="about" style={{ scrollMarginTop: "90px" }}>
         <About />
       </section>
 
-      <section id="contact">
+      <section id="contact" style={{ scrollMarginTop: "90px" }}>
         <Footer />
       </section>
 
