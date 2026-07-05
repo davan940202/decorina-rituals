@@ -288,10 +288,132 @@ export default function App() {
 
   if (currentPath === "/cancel") {
     return (
-      <div style={{ padding: "80px 24px", textAlign: "center" }}>
-        <h1>Order Cancelled</h1>
-        <p>Your payment was not completed.</p>
-        <a href="/">Back to Home</a>
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          background: "linear-gradient(to bottom, #f8f3ec, #f3ece3)",
+          padding: "24px",
+          fontFamily: "serif",
+          color: "#2d241f",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "#fffaf5",
+            padding: "56px 36px",
+            borderRadius: "32px",
+            maxWidth: "520px",
+            width: "100%",
+            textAlign: "center",
+            boxShadow: "0 10px 40px rgba(0,0,0,0.08)",
+          }}
+        >
+          <div
+            style={{
+              width: "82px",
+              height: "82px",
+              borderRadius: "50%",
+              backgroundColor: "#efe4d7",
+              margin: "0 auto 26px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "34px",
+              color: "#8b6f55",
+            }}
+          >
+            ✕
+          </div>
+
+          <p
+            style={{
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              fontSize: "12px",
+              color: "#9c8877",
+              marginBottom: "12px",
+            }}
+          >
+            Decorina Rituals
+          </p>
+
+          <h1
+            style={{
+              fontSize: "46px",
+              marginBottom: "18px",
+              lineHeight: "1.1",
+            }}
+          >
+            Order Cancelled
+          </h1>
+
+          <p
+            style={{
+              fontSize: "18px",
+              color: "#6e5b4d",
+              lineHeight: "1.8",
+              marginBottom: "26px",
+            }}
+          >
+            Your payment was not completed. No worries — your cart is still waiting for you.
+          </p>
+
+          <div
+            style={{
+              backgroundColor: "#f5ede4",
+              padding: "18px",
+              borderRadius: "18px",
+              marginBottom: "30px",
+              color: "#6e5b4d",
+              fontSize: "15px",
+              lineHeight: "1.7",
+            }}
+          >
+            Need help checking out? Contact us at info@decorinarituals.com.
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              gap: "12px",
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            <a
+              href="/"
+              style={{
+                padding: "16px 30px",
+                borderRadius: "999px",
+                backgroundColor: "#2d241f",
+                color: "white",
+                textDecoration: "none",
+                fontSize: "15px",
+                letterSpacing: "0.5px",
+              }}
+            >
+              Back to Home
+            </a>
+
+            <a
+              href="/collection"
+              style={{
+                padding: "16px 30px",
+                borderRadius: "999px",
+                border: "1px solid #b89b82",
+                color: "#2d241f",
+                textDecoration: "none",
+                fontSize: "15px",
+                letterSpacing: "0.5px",
+              }}
+            >
+              Return to Cart
+            </a>
+          </div>
+        </div>
       </div>
     );
   }
