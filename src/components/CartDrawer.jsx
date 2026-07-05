@@ -8,9 +8,12 @@ export default function CartDrawer({
     decreaseQuantity,
     removeFromCart,
 }) {
-    const total = cartItems.reduce((sum, item) => {
+    const subtotal = cartItems.reduce((sum, item) => {
         return sum + Number(item.price.replace("$", "")) * item.quantity;
     }, 0);
+
+    const shippingFee = subtotal >= 150 ? 0 : 7.95;
+    const total = subtotal + shippingFee;
 
     if (!isCartOpen) return null;
 
@@ -58,8 +61,14 @@ export default function CartDrawer({
                     ×
                 </button>
 
-                <h2 style={{ fontSize: "36px", marginBottom: "30px" }}>
-                    Your Cart
+                <h2
+                    style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: "56px",
+                        fontWeight: 500,
+                        marginBottom: "34px",
+                    }}
+                >                    Your Cart
                 </h2>
 
                 {cartItems.length === 0 ? (
@@ -88,8 +97,14 @@ export default function CartDrawer({
                                 />
 
                                 <div style={{ flex: 1 }}>
-                                    <h3 style={{ marginBottom: "6px" }}>
-                                        {item.name}
+                                    <h3
+                                        style={{
+                                            fontFamily: "'Cormorant Garamond', serif",
+                                            fontSize: "26px",
+                                            fontWeight: 500,
+                                            marginBottom: "6px",
+                                        }}
+                                    >                                        {item.name}
                                     </h3>
 
                                     <p
@@ -98,10 +113,7 @@ export default function CartDrawer({
                                             marginBottom: "12px",
                                         }}
                                     >
-                                        {item.price} × {item.quantity} = $
-                                        {(
-                                            Number(item.price.replace("$", "")) * item.quantity
-                                        ).toFixed(2)}
+                                        {item.price} × {item.quantity}
                                     </p>
                                     <div
                                         style={{
@@ -183,9 +195,47 @@ export default function CartDrawer({
                                 </div>
                             </div>
                         ))}
-                        <h3 style={{ marginTop: "24px" }}>
-                            Total: ${total.toFixed(2)}
-                        </h3>
+                        <div style={{ marginTop: "28px", lineHeight: "2" }}>
+                            <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                <span>Subtotal</span>
+                                <span>${subtotal.toFixed(2)}</span>
+                            </div>
+
+                            <div style={{ display: "flex", justifyContent: "space-between" }}>
+                                <span>Shipping</span>
+                                <span>
+                                    {shippingFee === 0
+                                        ? "Complimentary"
+                                        : `$${shippingFee.toFixed(2)}`}
+                                </span>
+                            </div>
+
+                            {subtotal < 150 && (
+                                <p style={{ color: "#8b6f55", fontSize: "14px" }}>
+                                    Spend ${(150 - subtotal).toFixed(2)} more to enjoy complimentary shipping.
+                                </p>
+                            )}
+
+                            <hr
+                                style={{
+                                    margin: "18px 0",
+                                    border: "none",
+                                    borderTop: "1px solid #eadfce",
+                                }}
+                            />
+
+                            <div
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    fontWeight: 600,
+                                    fontSize: "22px",
+                                }}
+                            >
+                                <span>Total</span>
+                                <span>${total.toFixed(2)}</span>
+                            </div>
+                        </div>
 
                         <button
                             onClick={() => setIsCartOpen(false)}
@@ -199,6 +249,7 @@ export default function CartDrawer({
                                 color: "#2d241f",
                                 cursor: "pointer",
                                 fontSize: "15px",
+                                fontWeight: 500,
                             }}
                         >
                             Continue Shopping
@@ -248,6 +299,7 @@ export default function CartDrawer({
                                 cursor:
                                     cartItems.length === 0 ? "not-allowed" : "pointer",
                                 fontSize: "15px",
+                                fontWeight: 500,
                                 opacity: cartItems.length === 0 ? 0.7 : 1,
                             }}
                         >

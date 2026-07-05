@@ -15,7 +15,11 @@ export default async function handler(req, res) {
     }
 
     const origin = req.headers.origin || "http://localhost:3000";
+    const subtotal = cartItems.reduce((sum, item) => {
+      return sum + Number(item.price.replace("$", "")) * item.quantity;
+    }, 0);
 
+    const shippingFee = subtotal >= 150 ? 0 : 7.95;
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
@@ -29,10 +33,13 @@ export default async function handler(req, res) {
           shipping_rate_data: {
             type: "fixed_amount",
             fixed_amount: {
-              amount: 0,
+              amount: Math.round(shippingFee * 100),
               currency: "aud",
             },
-            display_name: "Standard Delivery",
+            display_name:
+              shippingFee === 0
+                ? "Free Standard Delivery"
+                : "Standard Delivery",
             delivery_estimate: {
               minimum: {
                 unit: "business_day",
