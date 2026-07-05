@@ -186,4 +186,5 @@ export const featuredProducts = [
   products[0],
   products[1],
   products[2],
+  products[3]
 ];
