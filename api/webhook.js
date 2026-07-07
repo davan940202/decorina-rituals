@@ -80,10 +80,8 @@ export default async function handler(req, res) {
             : "No shipping address provided.";
 
         await resend.emails.send({
-            from: "Decorina Rituals <onboarding@resend.dev>",
-            to: [
-                "info@decorinarituals.co.site",
-            ],
+            from: "Decorina Rituals <orders@decorinarituals.com>",
+            to: "info@decorinarituals.co.site",
             subject: "New Decorina Rituals Order",
             html: `
                 <h2>New Decorina Rituals Order</h2>
