@@ -81,7 +81,9 @@ export default async function handler(req, res) {
 
         await resend.emails.send({
             from: "Decorina Rituals <onboarding@resend.dev>",
-            to: process.env.ORDER_EMAIL,
+            to: [
+                "info@decorinarituals.co.site",
+            ],
             subject: "New Decorina Rituals Order",
             html: `
                 <h2>New Decorina Rituals Order</h2>
