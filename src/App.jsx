@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ProductSection from "./components/ProductSection";
@@ -116,10 +117,20 @@ export default function App() {
 
   const currentPath = window.location.pathname;
   if (currentPath === "/waitlist-success") {
-    return <WaitlistSuccess />;
+    return (
+      <>
+        <WaitlistSuccess />
+        <Analytics />
+      </>
+    );
   }
   if (window.location.pathname === "/waitlist") {
-    return <Waitlist />;
+    return (
+      <>
+        <Waitlist />
+        <Analytics />
+      </>
+    );
   }
   if (currentPath === "/collection") {
     return (
@@ -171,6 +182,7 @@ export default function App() {
             ✓ {toastMessage}
           </div>
         )}
+        <Analytics />
       </div>
     );
   }
@@ -282,6 +294,7 @@ export default function App() {
             Continue Shopping
           </a>
         </div>
+        <Analytics />
       </div>
     );
   }
@@ -414,6 +427,7 @@ export default function App() {
             </a>
           </div>
         </div>
+        <Analytics />
       </div>
     );
   }
@@ -489,6 +503,7 @@ export default function App() {
           ✓ {toastMessage}
         </div>
       )}
+      <Analytics />
     </div>
   );
 }
