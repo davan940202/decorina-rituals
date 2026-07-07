@@ -10,6 +10,7 @@ import ProductModal from "./components/ProductModal";
 import Collection from "./pages/Collection";
 import Waitlist from "./pages/Waitlist";
 import WaitlistSuccess from "./pages/WaitlistSuccess";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const [cartItems, setCartItems] = useState(() => {
@@ -489,6 +490,7 @@ export default function App() {
           ✓ {toastMessage}
         </div>
       )}
+      <Analytics />
     </div>
   );
 }
