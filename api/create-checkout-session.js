@@ -24,6 +24,8 @@ export default async function handler(req, res) {
       payment_method_types: ["card"],
       mode: "payment",
 
+      allow_promotion_codes: true,
+      
       shipping_address_collection: {
         allowed_countries: ["AU"],
       },
