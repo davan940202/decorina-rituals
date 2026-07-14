@@ -64,7 +64,7 @@ export const products = [
   {
     id: 4,
     name: "Heavenly Gardenia",
-    scent: "White Floral • Soft • Fresh",
+    scent: "White Floral • Green • Serene",
     description: "A delicate gardenia fragrance for mindfulness and quiet reflection.",
     story:
       "Find a moment of stillness with Heavenly Gardenia, a delicate floral fragrance that inspires peace, clarity, and quiet reflection. Elegant gardenia blossoms unfold into soft green notes, creating a scent that gently soothes the senses while uplifting the spirit.\n\nLike the first light of dawn filtering through a tranquil garden, Heavenly Gardenia invites you to slow down, breathe deeply, and reconnect with yourself. Its graceful floral aroma creates an atmosphere of calm and mindfulness, making it the perfect companion for meditation, yoga, journaling, or simply unwinding after a long day.\n\nDesigned to nurture moments of inner peace, this fragrance fills your home with a gentle sense of positivity, serenity, and emotional balance—transforming everyday rituals into meaningful moments of self-care.",
@@ -98,7 +98,8 @@ export const products = [
   {
     id: 6,
     name: "Blanc Elegance",
-    scent: "Luxurious • Powdery • Timeless",
+    scent:
+      "Powdery • Green Floral • Elegant",
     description: "A refined scent inspired by orchestral elegance and classic luxury.",
     story:
       "Timeless, graceful, and exquisitely refined, Blanc Elegance is a fragrance that embodies the quiet grandeur of classic luxury. Delicate white florals unfold into soft powdered iris and precious woods, creating an aroma that is both luminous and sophisticated.\n\nImagine taking your seat beneath magnificent chandeliers as a grand orchestra begins to play. Every note fills the air with poise and emotion, while the surrounding elegance evokes the splendour of regal estates and timeless traditions. Blanc Elegance captures this unforgettable atmosphere, surrounding your home with a sense of grace, serenity, and quiet opulence.\n\nDesigned for those who appreciate understated luxury, this fragrance transforms everyday moments into refined rituals, where beauty is found in simplicity, and every breath feels effortlessly elegant.\n\nA scent inspired by classical music, royal grandeur, and the enduring beauty of timeless sophistication.",
@@ -108,7 +109,8 @@ export const products = [
       heart: "Violet Leaf, Hyacinth",
       base: "Sandalwood",
     },
-    mood: "Powdery • Green Floral • Elegant",
+    mood:
+      "Elegant • Regal • Timeless • Sophisticated",
     price: "$24.95",
     image: blancElegance,
   },
@@ -118,7 +120,7 @@ export const products = [
     scent: "Floral • Creamy • Elegant",
     description: "A chic Parisian floral wrapped in creamy vanilla and soft musk.",
     story:
-  "Effortlessly elegant and irresistibly charming, Mademoiselle Coco captures the romance of a quiet Parisian afternoon. Delicate florals bloom alongside creamy vanilla, soft musk, and warm sandalwood, while hints of green almond, apple, and blackcurrant add a graceful freshness that feels effortlessly sophisticated.\n\nPicture yourself strolling along charming cobblestone streets, where boutique cafés spill onto sunlit terraces and timeless architecture frames every corner. A warm pastry rests beside a freshly brewed café latte as the city moves at an unhurried pace, inviting you to savour life's simplest pleasures.\n\nDesigned for moments of comfort and quiet indulgence, Mademoiselle Coco transforms your home into a space filled with warmth, femininity, and understated elegance. Whether shared with loved ones or enjoyed in peaceful solitude, it brings the effortless beauty of Paris into your everyday ritual.\n\nA fragrance inspired by Parisian charm, timeless style, and the art of living beautifully.",
+      "Effortlessly elegant and irresistibly charming, Mademoiselle Coco captures the romance of a quiet Parisian afternoon. Delicate florals bloom alongside creamy vanilla, soft musk, and warm sandalwood, while hints of green almond, apple, and blackcurrant add a graceful freshness that feels effortlessly sophisticated.\n\nPicture yourself strolling along charming cobblestone streets, where boutique cafés spill onto sunlit terraces and timeless architecture frames every corner. A warm pastry rests beside a freshly brewed café latte as the city moves at an unhurried pace, inviting you to savour life's simplest pleasures.\n\nDesigned for moments of comfort and quiet indulgence, Mademoiselle Coco transforms your home into a space filled with warmth, femininity, and understated elegance. Whether shared with loved ones or enjoyed in peaceful solitude, it brings the effortless beauty of Paris into your everyday ritual.\n\nA fragrance inspired by Parisian charm, timeless style, and the art of living beautifully.",
     burnTime: "Approx. 22–30 hours (100g)",
     notes: {
       top: "Green Almond, Apple, Blackcurrant",
@@ -132,11 +134,10 @@ export const products = [
   {
     id: 8,
     name: "Midnight Underworld",
-    scent: "Woody • Smoky • Sophisticated",
-    description: "A rich and mysterious scent for focus, ambition, and deep reflection.",
+   scent: "Woody • Incense • Smoky",
+    description: "A rich woody fragrance inspired by quiet confidence and midnight reflection.",
     story:
-      "Midnight Underworld is crafted for those who move with purpose. Rich woody notes intertwine with smoky amber and warm amber, creating a scent that is both mysterious and undeniably sophisticated.\n\nLike a solitary walk through the city after midnight, when the world falls silent, and your thoughts become clear, Midnight Underworld invites a sense of focus, confidence, and direction. It is a fragrance that lingers with quiet strength—never overpowering, yet impossible to overlook.\n\nDesigned for the ambitious and the determined, this scent transforms your space into one of intention and clarity, inspiring moments of deep reflection, decisive action, and unwavering confidence.\n\nA fragrance that embodies quiet luxury, timeless elegance, and the subtle presence of success.",
-    burnTime: "Approx. 22–30 hours (100g)",
+  "Dark, refined, and quietly captivating, Midnight Underworld is crafted for those who move with purpose. Rich woody notes intertwine with smoky incense, warm amber, creamy sandalwood, and hints of frankincense, creating a fragrance that is both mysterious and undeniably sophisticated.\n\nLike a solitary walk through the city after midnight, when the world falls silent and your thoughts become clear, Midnight Underworld invites a sense of focus, confidence, and direction. It lingers with quiet strength—never overpowering, yet impossible to overlook.\n\nDesigned for the ambitious and the determined, this fragrance transforms your space into one of intention and clarity, inspiring moments of deep reflection, decisive action, and unwavering confidence. Whether you're working late, journaling your thoughts, or simply embracing a moment of stillness, Midnight Underworld creates an atmosphere where purpose and presence come naturally.\n\nA fragrance inspired by midnight reflections, quiet luxury, and the subtle presence of success.",
     notes: {
       top: "Lily, Benzoin",
       heart: "Frankincense, Sandalwood",
@@ -152,8 +153,7 @@ export const products = [
     scent: "Bright • Floral • Fruity",
     description: "A radiant floral fragrance with juicy fruits and delicate orange blossom.",
     story:
-  "Radiant, uplifting, and effortlessly elegant, Oud & Orange Blossom captures the beauty of a sunlit garden in full bloom. Juicy lychee and mandarin open with a delicate brightness, while soft orange blossom and warm copaiba resin create a fragrance that feels fresh, luminous, and beautifully inviting.\n\nGolden afternoon light filters through blooming citrus trees as vibrant blossoms sway gently in the breeze. Every breath carries the sweetness of ripened fruit and delicate florals, creating an atmosphere that feels joyful, refreshing, and quietly luxurious.\n\nDesigned to brighten your surroundings and elevate everyday moments, Oud & Orange Blossom transforms your home into a garden filled with warmth, colour, and natural elegance. Whether you're welcoming guests or simply enjoying a peaceful afternoon, it fills every space with effortless beauty and uplifting energy.\n\nA fragrance inspired by blooming citrus gardens, golden afternoons, and the simple luxury of living beautifully.",
-    burnTime: "Approx. 22–30 hours (100g)",
+  "Radiant, uplifting, and naturally luminous, Oud & Orange Blossom captures the beauty of a sunlit garden in full bloom. Juicy lychee and mandarin open with a delicate brightness, while soft orange blossom and warm copaiba resin create a fragrance that feels fresh, vibrant, and beautifully inviting.\n\nGolden afternoon light filters through blooming citrus trees as vibrant blossoms sway gently in the breeze. The sweetness of ripe lychee and mandarin lingers in the warm air, while delicate orange blossoms bloom beneath the sun, creating an atmosphere that feels joyful, refreshing, and effortlessly inviting.\n\nWhether you're welcoming guests or enjoying a quiet afternoon to yourself, Oud & Orange Blossom fills your home with warmth, colour, and natural elegance. Bright yet comforting, it transforms everyday moments into joyful rituals inspired by nature's beauty.\n\nA fragrance inspired by blooming citrus gardens, golden afternoons, and the simple luxury of living beautifully.",
     notes: {
       top: "Lychee",
       heart: "Persimmon, Mandarin",
@@ -166,7 +166,7 @@ export const products = [
   {
     id: 10,
     name: "Citronella Breeze",
-    scent: "Fresh • Citrus • Spa Inspired",
+    scent: "Fresh • Citrus • Herbal",
     description: "A bright spa-inspired fragrance for refreshing everyday rituals.",
     story:
       "Awaken your senses with Citronella Breeze, a refreshing citrus fragrance that captures the feeling of stepping into a luxury spa. Bright, sun-ripened citrus notes are balanced with fresh botanical accords, creating a clean and revitalising aroma that instantly refreshes your space.\n\nWhether you're beginning your morning with intention or unwinding after a busy day, Citronella Breeze transforms everyday moments into calming rituals. Its crisp, uplifting fragrance brings clarity to the mind while creating a serene atmosphere, allowing you to enjoy the comforting experience of a premium spa from the comfort of your own home.\n\nA vibrant yet soothing scent designed to refresh your surroundings, restore your focus, and elevate your daily wellness ritual.",
