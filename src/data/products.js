@@ -23,7 +23,7 @@ export const products = [
       heart: "Lily of the Valley, Lavender",
       base: "Milk, Honey",
     },
-    mood: "Calm • Wellness • Coastal Escape • Summer Serenity",
+    mood: "Calm • Comfort • Coastal Escape • Summer Serenity",
     price: "$24.95",
     image: coconutSilk,
   },
@@ -64,7 +64,7 @@ export const products = [
   {
     id: 4,
     name: "Heavenly Gardenia",
-    scent: "Floral • Peaceful • Serene",
+    scent: "White Floral • Soft • Fresh",
     description: "A delicate gardenia fragrance for mindfulness and quiet reflection.",
     story:
       "Find a moment of stillness with Heavenly Gardenia, a delicate floral fragrance that inspires peace, clarity, and quiet reflection. Elegant gardenia blossoms unfold into soft green notes, creating a scent that gently soothes the senses while uplifting the spirit.\n\nLike the first light of dawn filtering through a tranquil garden, Heavenly Gardenia invites you to slow down, breathe deeply, and reconnect with yourself. Its graceful floral aroma creates an atmosphere of calm and mindfulness, making it the perfect companion for meditation, yoga, journaling, or simply unwinding after a long day.\n\nDesigned to nurture moments of inner peace, this fragrance fills your home with a gentle sense of positivity, serenity, and emotional balance—transforming everyday rituals into meaningful moments of self-care.",
@@ -108,7 +108,7 @@ export const products = [
       heart: "Violet Leaf, Hyacinth",
       base: "Sandalwood",
     },
-    mood: "Elegant • Regal • Timeless • Sophisticated",
+    mood: "Powdery • Green Floral • Elegant",
     price: "$24.95",
     image: blancElegance,
   },
@@ -118,7 +118,7 @@ export const products = [
     scent: "Floral • Creamy • Elegant",
     description: "A chic Parisian floral wrapped in creamy vanilla and soft musk.",
     story:
-  "Effortlessly elegant and undeniably chic, Mademoiselle Coco captures the charm of a quiet Parisian afternoon. Delicate florals unfold over soft musk, creamy vanilla, and warm sandalwood, while subtle notes of green almond, apple, and blackcurrant add a fresh, graceful brightness.\n\nCobblestone streets, beautifully curated boutiques, and cafés tucked beneath historic balconies create an atmosphere where style feels effortless and every detail is appreciated. Inspired by this timeless elegance, Mademoiselle Coco fills your space with warmth, femininity, and quiet sophistication.\n\nDesigned for slow mornings, relaxed afternoons, or intimate evenings at home, this fragrance transforms everyday moments into beautiful rituals. Soft, comforting, and refined, it lingers gently in the air like the memory of an unforgettable stroll through Paris.\n\nA scent inspired by Parisian charm, effortless style, and the beauty of living well.",
+  "Effortlessly elegant and irresistibly charming, Mademoiselle Coco captures the romance of a quiet Parisian afternoon. Delicate florals bloom alongside creamy vanilla, soft musk, and warm sandalwood, while hints of green almond, apple, and blackcurrant add a graceful freshness that feels effortlessly sophisticated.\n\nPicture yourself strolling along charming cobblestone streets, where boutique cafés spill onto sunlit terraces and timeless architecture frames every corner. A warm pastry rests beside a freshly brewed café latte as the city moves at an unhurried pace, inviting you to savour life's simplest pleasures.\n\nDesigned for moments of comfort and quiet indulgence, Mademoiselle Coco transforms your home into a space filled with warmth, femininity, and understated elegance. Whether shared with loved ones or enjoyed in peaceful solitude, it brings the effortless beauty of Paris into your everyday ritual.\n\nA fragrance inspired by Parisian charm, timeless style, and the art of living beautifully.",
     burnTime: "Approx. 22–30 hours (100g)",
     notes: {
       top: "Green Almond, Apple, Blackcurrant",
@@ -135,7 +135,7 @@ export const products = [
     scent: "Woody • Smoky • Sophisticated",
     description: "A rich and mysterious scent for focus, ambition, and deep reflection.",
     story:
-      "Midnight Underworld is crafted for those who move with purpose. Rich woody notes intertwine with smoky amber and refined musk, creating a scent that is both mysterious and undeniably sophisticated.\n\nLike a solitary walk through the city after midnight, when the world falls silent, and your thoughts become clear, Midnight Underworld invites a sense of focus, confidence, and direction. It is a fragrance that lingers with quiet strength—never overpowering, yet impossible to overlook.\n\nDesigned for the ambitious and the determined, this scent transforms your space into one of intention and clarity, inspiring moments of deep reflection, decisive action, and unwavering confidence.\n\nA fragrance that embodies quiet luxury, timeless elegance, and the subtle presence of success.",
+      "Midnight Underworld is crafted for those who move with purpose. Rich woody notes intertwine with smoky amber and warm amber, creating a scent that is both mysterious and undeniably sophisticated.\n\nLike a solitary walk through the city after midnight, when the world falls silent, and your thoughts become clear, Midnight Underworld invites a sense of focus, confidence, and direction. It is a fragrance that lingers with quiet strength—never overpowering, yet impossible to overlook.\n\nDesigned for the ambitious and the determined, this scent transforms your space into one of intention and clarity, inspiring moments of deep reflection, decisive action, and unwavering confidence.\n\nA fragrance that embodies quiet luxury, timeless elegance, and the subtle presence of success.",
     burnTime: "Approx. 22–30 hours (100g)",
     notes: {
       top: "Lily, Benzoin",
@@ -152,7 +152,7 @@ export const products = [
     scent: "Bright • Floral • Fruity",
     description: "A radiant floral fragrance with juicy fruits and delicate orange blossom.",
     story:
-  "Radiant and effortlessly uplifting, Oud & Orange Blossom captures the warmth of a sunlit garden in full bloom. Juicy lychee and mandarin open with a delicate brightness, while soft orange blossom and warm copaiba resin create a fragrance that feels vibrant, elegant, and beautifully inviting.\n\nGolden afternoon light filters through blooming citrus trees as gentle floral aromas drift through the air. Every breath carries a sense of warmth, freshness, and quiet joy, transforming an ordinary day into something unforgettable.\n\nDesigned to brighten your surroundings and elevate everyday moments, Oud & Orange Blossom fills your home with an atmosphere of effortless beauty and natural elegance. Whether shared with guests or enjoyed in peaceful solitude, it brings the uplifting feeling of a garden bathed in golden sunlight.\n\nA scent inspired by blooming citrus gardens, radiant afternoons, and the simple luxury of living beautifully.",
+  "Radiant, uplifting, and effortlessly elegant, Oud & Orange Blossom captures the beauty of a sunlit garden in full bloom. Juicy lychee and mandarin open with a delicate brightness, while soft orange blossom and warm copaiba resin create a fragrance that feels fresh, luminous, and beautifully inviting.\n\nGolden afternoon light filters through blooming citrus trees as vibrant blossoms sway gently in the breeze. Every breath carries the sweetness of ripened fruit and delicate florals, creating an atmosphere that feels joyful, refreshing, and quietly luxurious.\n\nDesigned to brighten your surroundings and elevate everyday moments, Oud & Orange Blossom transforms your home into a garden filled with warmth, colour, and natural elegance. Whether you're welcoming guests or simply enjoying a peaceful afternoon, it fills every space with effortless beauty and uplifting energy.\n\nA fragrance inspired by blooming citrus gardens, golden afternoons, and the simple luxury of living beautifully.",
     burnTime: "Approx. 22–30 hours (100g)",
     notes: {
       top: "Lychee",
