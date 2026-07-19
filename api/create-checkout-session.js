@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       return sum + Number(item.price.replace("$", "")) * item.quantity;
     }, 0);
 
-    const shippingFee = subtotal >= 150 ? 0 : 7.95;
+    const shippingFee = subtotal >= 150 ? 0 : 9.95;
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
